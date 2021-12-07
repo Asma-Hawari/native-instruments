@@ -70,7 +70,7 @@ import the collection to Postman and Check all the endpoints
 ### About the Whole Process
 
 #### The Database 
-the database is consists of 3 tables 
+the database consists of 3 tables 
 
 1- users
 
