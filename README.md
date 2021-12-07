@@ -1,13 +1,36 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
-
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+<a href="https://www.native-instruments.com/en/"><img src="native.png" alt="Native Instrument"></a>
 </p>
 
-## About Laravel
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+
+## The Code Challenge
+
+### The Main Task
+
+Please develop a small containerised product service with an HTTP API. We would love to see your working solution including tests, a local development environment, and some documentation.
+
+The intended API can be interfaced via HTTP and should provide the following endpoints:
+
+• GET /products
+• POST /auth
+• GET /user
+• GET /user/products
+• POST /user/products
+• DELETE /user/products/{SKU}
+(SKU meaning a unique product identifier in this and following context)
+
+Users, products and previous purchases are provided as CSVs in the attached zip and need to be imported into the service once. For simplicity the user password is not hashed in the provided file.
+
+The `/products` endpoint should return all available product data.
+
+The API should offer some basic authentication to authenticate a specific user at the `/auth` endpoint. After a user is authenticated, the user should see user data (returns
+name) at the `/user` endpoint, the purchased products at `/user/products` (returns SKU (unique product identifier) + name). It should be possible to attach or remove
+purchased products to a particular user account.
+
+## The Solution
+
+### The FrameWork
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
@@ -21,46 +44,54 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+### The Packages 
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- "laravel/sail": "^1.0.1" - to use docker with laravel 
+- "laravel/sanctum": "^2.11" - for authentication
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## How to run the application?
+ps:: .gitignore has been removed from this repo 
+- download the repo on your local machine
+- cd to the project 
+- run the following commands:
 
-## Laravel Sponsors
+ 1- ./vendor/bin/sail up -d  (this may take a while for the first time, -d to run it in the background) - <b>Mandatory</b>
+ 
+ 2- ./vendor/bin/sail artisan migrate:refresh --seed (this command will build the database and add the data into the tables) - <b>Mandatory</b> 
+ 
+ 3- ./vendor/bin/sail test (to see all the positive and Negative Tests Implemented) - <b>Optional</b> 
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Test The Result On Postman
 
-### Premium Partners
+to test the result on postman, go to database -> data -> collection
+import the collection to Postman and Check all the endpoints
+- kindly notice that almost all the endpoints need authorization so the Bearer token must be correct
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-- **[Romega Software](https://romegasoftware.com)**
+### About the Whole Process
 
-## Contributing
+#### The Database 
+the database is consists of 3 tables 
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+1- users
 
-## Code of Conduct
+2- products
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+3- product_user (Pivot Table)
 
-## Security Vulnerabilities
+the purchased items from the CV did not contain the primary key, however it did contain the SKUs instead.
+so i made it according to the standard E-commerce frameworks where we link the products with their primary key and it must be integer, not a string ( we can however, make the primary key as a string but the standard way to be an integer)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+#### The Data
+the data will be imported from the CSV files once the command "seed" is run
+  
+#### Code Test
+PHPUnit Test is used to run tests for each endpoint , Negative and Positive tests are added
 
+## suggested improvements
+- Integrates with CI/CD processes on GitLab.
+- Make use of the query string for filtering and pagination when retrieving all the products.
+- make more tests to catch every exception that might be thrown.
+- Add Tests For Database actions.
+ 
 ## License
-
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
