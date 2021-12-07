@@ -70,7 +70,7 @@ import the collection to Postman and Check all the endpoints
 ### About the Whole Process
 
 #### The Database 
-the database is consists of 3 tables 
+the database consists of 3 tables 
 
 1- users
 
@@ -78,7 +78,7 @@ the database is consists of 3 tables
 
 3- product_user (Pivot Table)
 
-the purchased items from the CV did not contain the primary key, however it did contain the SKUs instead.
+the purchased items from the CSV did not contain the primary key, however it did contain the SKUs instead.
 so i made it according to the standard E-commerce frameworks where we link the products with their primary key and it must be integer, not a string ( we can however, make the primary key as a string but the standard way to be an integer)
 
 #### The Data
