@@ -87,14 +87,6 @@ the data will be imported from the CSV files once the command "seed" is run
 #### Code Test
 PHPUnit Test is used to run tests for each endpoint , Negative and Positive tests are added
 
-## suggested improvements
-- Integrates with CI/CD processes on GitLab.
-- Make use of the query string for filtering and pagination when retrieving all the products.
-- make more tests to catch every exception that might be thrown.
-- Add Tests For Database actions.
- 
-## License
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
 ## Different Cases
 <b>Register</b>
@@ -176,3 +168,12 @@ SKU must be valid - Authentication Required
 <p align="center">
 <img src="database/data/screenshots/DeletePurchasedItem.png" alt="delete_user_product">
 </p>
+
+## suggested improvements
+- Integrates with CI/CD processes on GitLab.
+- Make use of the query string for filtering and pagination when retrieving all the products.
+- make more tests to catch every exception that might be thrown.
+- Add Tests For Database actions.
+ 
+## License
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
