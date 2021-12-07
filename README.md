@@ -98,34 +98,47 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## Different Cases
 <b>Register</b>
+
 All the different Cases of Registration has been processed
-Creating new User
+
+<b>Creating new User</b>
+
 <p align="center">
 <img src="database/data/screenshots/register.png" alt="Register">
 </p>
-Handing Validation Error
+
+<b>Handing Validation Error</b>
+
 <p align="center">
 <img src="database/data/screenshots/validation-Register.png" alt="validation-Register">
 </p>
-Handing Duplicate Entry Error
+
+<b>Handing Duplicate Entry Error</b>
+
 <p align="center">
 <img src="database/data/screenshots/duplicateEntry-register.png" alt="Duplicate Entry">
 </p>
 
 <b>Authentication</b>
+
 All the different Cases of Authentication has been processed
+
 <p align="center">
 <img src="database/data/screenshots/auth.png" alt="Authentication">
 </p>
 
 <b>Get Products</b>
+
 Get All The products - No Authentication Required
+
 <p align="center">
 <img src="database/data/screenshots/getallproducts.png" alt="get_all_products">
 </p>
 
 <b>Get User Data</b>
+
 Get User name - Authentication Required
+
 <p align="center">
 <img src="database/data/screenshots/getUserData.png" alt="get_user_data">
 </p>
@@ -135,13 +148,17 @@ Get User name - Authentication Required
 </p>
 
 <b>Get User's Purchased Items</b>
+
 SKUs for all the purchased products - Authentication Required
+
 <p align="center">
 <img src="database/data/screenshots/getUserProducts.png" alt="get_user_products">
 </p>
 
 <b>Add Purchased Item to the user's purchased list</b>
+
 SKU must be valid - Authentication Required
+
 <p align="center">
 <img src="database/data/screenshots/additemnotfound.png" alt="add_user_products">
 </p>
@@ -150,7 +167,9 @@ SKU must be valid - Authentication Required
 </p>
 
 <b>Delete Purchased Item from the user's purchased list</b>
+
 SKU must be valid - Authentication Required
+
 <p align="center">
 <img src="database/data/screenshots/deletenotfound.png" alt="delete_user_product">
 </p>
