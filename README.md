@@ -95,3 +95,66 @@ PHPUnit Test is used to run tests for each endpoint , Negative and Positive test
  
 ## License
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Different Cases
+<b>Register</b>
+All the different Cases of Registration has been processed
+Creating new User
+<p align="center">
+<img src="database/data/screenshots/register.png" alt="Register">
+</p>
+Handing Validation Error
+<p align="center">
+<img src="database/data/screenshots/validation-Register.png" alt="validation-Register">
+</p>
+Handing Duplicate Entry Error
+<p align="center">
+<img src="database/data/screenshots/duplicateEntry-register.png" alt="Duplicate Entry">
+</p>
+
+<b>Authentication</b>
+All the different Cases of Authentication has been processed
+<p align="center">
+<img src="database/data/screenshots/auth.png" alt="Authentication">
+</p>
+
+<b>Get Products</b>
+Get All The products - No Authentication Required
+<p align="center">
+<img src="database/data/screenshots/getallproducts.png" alt="get_all_products">
+</p>
+
+<b>Get User Data</b>
+Get User name - Authentication Required
+<p align="center">
+<img src="database/data/screenshots/getUserData.png" alt="get_user_data">
+</p>
+
+<p align="center">
+<img src="database/data/screenshots/getUserDataUnauthorized.png" alt="get_user_data">
+</p>
+
+<b>Get User's Purchased Items</b>
+SKUs for all the purchased products - Authentication Required
+<p align="center">
+<img src="database/data/screenshots/getUserProducts.png" alt="get_user_products">
+</p>
+
+<b>Add Purchased Item to the user's purchased list</b>
+SKU must be valid - Authentication Required
+<p align="center">
+<img src="database/data/screenshots/additemnotfound.png" alt="add_user_products">
+</p>
+<p align="center">
+<img src="database/data/screenshots/addpurchasedItem.png" alt="add_user_products">
+</p>
+
+<b>Delete Purchased Item from the user's purchased list</b>
+SKU must be valid - Authentication Required
+<p align="center">
+<img src="database/data/screenshots/deletenotfound.png" alt="delete_user_product">
+</p>
+<p align="center">
+<img src="database/data/screenshots/DeletePurchasedItem.png" alt="delete_user_product">
+</p>
+
