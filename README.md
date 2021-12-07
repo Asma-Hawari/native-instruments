@@ -157,4 +157,3 @@ SKU must be valid - Authentication Required
 <p align="center">
 <img src="database/data/screenshots/DeletePurchasedItem.png" alt="delete_user_product">
 </p>
-
