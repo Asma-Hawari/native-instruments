@@ -1,0 +1,235 @@
+{
+	"info": {
+		"_postman_id": "a9034f4a-da18-4cb9-98d4-8bd029edaab7",
+		"name": "Native intruments ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/auth?email=aparker@dicki.net&password=secret",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"auth"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "aparker@dicki.net"
+						},
+						{
+							"key": "password",
+							"value": "secret"
+						},
+						{
+							"key": "name",
+							"value": "asma",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProducts",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/register?name=asma&email=aparker@dicki.net&password=secret",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"register"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "asma"
+						},
+						{
+							"key": "email",
+							"value": "aparker@dicki.net"
+						},
+						{
+							"key": "password",
+							"value": "secret"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserData",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|TBcRACD85bk7Pdkyu0ifx8sknrxsd76QsuNO0iH0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPurcahsedItems",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|TBcRACD85bk7Pdkyu0ifx8sknrxsd76QsuNO0iH0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/user/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"user",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addPurcahsedItems",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|TBcRACD85bk7Pdkyu0ifx8sknrxsd76QsuNO0iH0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "sku",
+							"value": "nul",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/api/user/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"user",
+						"products"
+					],
+					"query": [
+						{
+							"key": "sku",
+							"value": "kontakt-6",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "removeItemFromUserList",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|TBcRACD85bk7Pdkyu0ifx8sknrxsd76QsuNO0iH0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/user/products/kontakt-6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"user",
+						"products",
+						"kontakt-6"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
